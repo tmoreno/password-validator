@@ -35,4 +35,12 @@ public class PasswordValidatorTest {
 			passwordValidator.validate("123456789");
 		});
 	}
+
+	@Test
+	public void should_throw_no_lower_letters_exception_when_password_has_no_lower_letters() {
+		assertThrows(NoLowerLettersException.class, () -> {
+			PasswordValidator passwordValidator = new PasswordValidator();
+			passwordValidator.validate("12345678A");
+		});
+	}
 }
