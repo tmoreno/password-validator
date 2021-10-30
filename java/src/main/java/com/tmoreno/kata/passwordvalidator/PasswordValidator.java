@@ -14,5 +14,9 @@ public final class PasswordValidator {
         if (password.equals(password.toUpperCase())) {
             throw new NoLowerLettersException();
         }
+
+        if (!password.matches(".*\\d.*")) {
+            throw new NoNumbersException();
+        }
     }
 }
