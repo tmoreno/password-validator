@@ -51,4 +51,12 @@ public class PasswordValidatorTest {
 			passwordValidator.validate("********Ab");
 		});
 	}
+
+	@Test
+	public void should_throw_no_underscore_exception_when_password_has_no_underscores() {
+		assertThrows(NoUnderscoreException.class, () -> {
+			PasswordValidator passwordValidator = new PasswordValidator();
+			passwordValidator.validate("1234567Ab");
+		});
+	}
 }
