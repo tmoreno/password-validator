@@ -16,7 +16,7 @@ public class PasswordValidatorTest {
 	public void should_throw_invalid_length_exception_when_password_length_is_less_than_8_chars() {
 		assertThrows(InvalidLengthException.class, () -> {
 			PasswordValidator passwordValidator = new PasswordValidator();
-			passwordValidator.validate("1234567");
+			passwordValidator.validate("Ab_1234");
 		});
 	}
 
@@ -24,7 +24,7 @@ public class PasswordValidatorTest {
 	public void should_throw_invalid_length_exception_when_password_length_is_8_chars() {
 		assertThrows(InvalidLengthException.class, () -> {
 			PasswordValidator passwordValidator = new PasswordValidator();
-			passwordValidator.validate("12345678");
+			passwordValidator.validate("Ab_12345");
 		});
 	}
 
@@ -32,7 +32,7 @@ public class PasswordValidatorTest {
 	public void should_throw_no_capital_letters_exception_when_password_has_no_capital_letters() {
 		assertThrows(NoCapitalLettersException.class, () -> {
 			PasswordValidator passwordValidator = new PasswordValidator();
-			passwordValidator.validate("123456789");
+			passwordValidator.validate("ab_123456");
 		});
 	}
 
@@ -40,7 +40,7 @@ public class PasswordValidatorTest {
 	public void should_throw_no_lower_letters_exception_when_password_has_no_lower_letters() {
 		assertThrows(NoLowerLettersException.class, () -> {
 			PasswordValidator passwordValidator = new PasswordValidator();
-			passwordValidator.validate("12345678A");
+			passwordValidator.validate("AB_123456");
 		});
 	}
 
@@ -48,7 +48,7 @@ public class PasswordValidatorTest {
 	public void should_throw_no_numbers_exception_when_password_has_no_numbers() {
 		assertThrows(NoNumbersException.class, () -> {
 			PasswordValidator passwordValidator = new PasswordValidator();
-			passwordValidator.validate("********Ab");
+			passwordValidator.validate("Ab_******");
 		});
 	}
 
@@ -56,7 +56,7 @@ public class PasswordValidatorTest {
 	public void should_throw_no_underscore_exception_when_password_has_no_underscores() {
 		assertThrows(NoUnderscoreException.class, () -> {
 			PasswordValidator passwordValidator = new PasswordValidator();
-			passwordValidator.validate("1234567Ab");
+			passwordValidator.validate("Ab*123456");
 		});
 	}
 }
