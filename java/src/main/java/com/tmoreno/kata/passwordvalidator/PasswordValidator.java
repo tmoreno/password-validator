@@ -6,5 +6,9 @@ public final class PasswordValidator {
         if (password.length() <= 8) {
             throw new InvalidLengthException();
         }
+
+        if (password.equals(password.toLowerCase())) {
+            throw new NoCapitalLettersException();
+        }
     }
 }
