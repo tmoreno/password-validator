@@ -18,5 +18,9 @@ public final class PasswordValidator {
         if (!password.matches(".*\\d.*")) {
             throw new NoNumbersException();
         }
+
+        if (!password.contains("_")) {
+            throw new NoUnderscoreException();
+        }
     }
 }
