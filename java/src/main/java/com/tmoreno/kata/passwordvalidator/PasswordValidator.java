@@ -10,5 +10,9 @@ public final class PasswordValidator {
         if (password.equals(password.toLowerCase())) {
             throw new NoCapitalLettersException();
         }
+
+        if (password.equals(password.toUpperCase())) {
+            throw new NoLowerLettersException();
+        }
     }
 }
