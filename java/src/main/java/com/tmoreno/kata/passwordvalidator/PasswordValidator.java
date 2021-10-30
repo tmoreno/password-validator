@@ -3,6 +3,8 @@ package com.tmoreno.kata.passwordvalidator;
 public final class PasswordValidator {
 
     public void validate(String password) {
+        containsAnUnderscore(password);
+
         haveMoreThan8Chars(password);
 
         containsACapitalLetter(password);
@@ -10,8 +12,6 @@ public final class PasswordValidator {
         containsALowerLetter(password);
 
         containsANumber(password);
-
-        containsAnUnderscore(password);
     }
 
     private void haveMoreThan8Chars(String password) {
