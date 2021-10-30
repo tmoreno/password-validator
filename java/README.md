@@ -13,5 +13,4 @@ A valid password should meet the following requirements:
 
 # Technical requirements:
 
-	- We want a method that answers if the password is valid or not.
-	- We don't want to know the reason when the password is invalid (the return value is a boolean)
+	- We want to know the reason when the password is invalid (throw an exception)
