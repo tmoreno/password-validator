@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class PasswordValidatorTest {
 
 	@Test
-	public void should_valid_password_when_password_length_is_more_than_8_chars_and_contains_a_capital_letter() {
+	public void should_valid_password_when_password_length_is_more_than_8_chars_and_contains_a_capital_letter_and_contains_a_lower_letter() {
 		PasswordValidator passwordValidator = new PasswordValidator();
-		passwordValidator.validate("12345678A");
+		passwordValidator.validate("12345678Ab");
 	}
 
 	@Test
