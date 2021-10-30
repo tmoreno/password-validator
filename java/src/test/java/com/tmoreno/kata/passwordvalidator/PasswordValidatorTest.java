@@ -22,4 +22,9 @@ public class PasswordValidatorTest {
 		});
 	}
 
+	@Test
+	public void should_valid_password_when_password_length_is_more_than_8_chars() {
+		PasswordValidator passwordValidator = new PasswordValidator();
+		passwordValidator.validate("123456789");
+	}
 }
