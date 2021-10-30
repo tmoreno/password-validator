@@ -43,4 +43,12 @@ public class PasswordValidatorTest {
 			passwordValidator.validate("12345678A");
 		});
 	}
+
+	@Test
+	public void should_throw_no_numbers_exception_when_password_has_no_numbers() {
+		assertThrows(NoNumbersException.class, () -> {
+			PasswordValidator passwordValidator = new PasswordValidator();
+			passwordValidator.validate("********Ab");
+		});
+	}
 }
