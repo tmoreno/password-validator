@@ -27,4 +27,12 @@ public class PasswordValidatorTest {
 		PasswordValidator passwordValidator = new PasswordValidator();
 		passwordValidator.validate("123456789");
 	}
+
+	@Test
+	public void should_throw_no_capital_letters_exception_when_password_has_no_capital_letters() {
+		assertThrows(NoCapitalLettersException.class, () -> {
+			PasswordValidator passwordValidator = new PasswordValidator();
+			passwordValidator.validate("123456789");
+		});
+	}
 }
